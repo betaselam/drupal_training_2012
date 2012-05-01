@@ -1,0 +1,8 @@
+<?php
+/**
+ * @file
+ * Code for the MyContentViewFeatures feature.
+ */
+
+include_once 'mycontentviewfeatures.features.inc';
+

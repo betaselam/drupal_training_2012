@@ -1,0 +1,74 @@
+<?php
+/**
+ * @file
+ * Code for the Hello World Features feature.
+ */
+
+ /*allows to specify permissions to the the hello_world module */
+ function hello_world_permission(){
+	return array(
+    'administer my module' => array(
+      'title' => t('Administer my module'), 
+      'description' => t('Perform administration tasks for my module.'),
+    ),
+	
+	'second administer my module' => array(
+      'title' => t('Administer my module'), 
+      'description' => t('Perform secondary administration tasks for my module.'),
+    ),
+  );
+}
+
+/*
+function myFunction()
+{
+	user_access("Admin");
+}*/
+
+/*all these data will be saved under menu router function. unlike permission hook, menu hook requires cache to be rebuild*/
+
+  function hello_world_menu() {
+	
+  
+  $items['hello-world-menu1'] = array(
+	  'title' => 'HW Menu 1',
+      'page callback' => 'example_stuff',
+	  'page arguments' => array(1, 'menu1'),
+	  'access arguments' => array('access content'),
+	  'type' => MENU_NORMAL_ITEM,
+    );
+	$items['hello-world-menu2'] = array(
+	  'title' => 'HW Menu 2',
+      'page callback' => 'example_stuff',
+	  'page arguments' => array(1, 'menu2'),
+	  'access arguments' => array('access content'),
+	  'type' => MENU_NORMAL_ITEM,
+    );
+	$items['hello-world-menu2/sub-menu1'] = array(
+	  'title' => 'HW Menu2 Sub1',
+      'page callback' => 'example_stuff',
+	  'page arguments' => array(1, 'menu2/sub-menu1'),
+	  'access arguments' => array('access content'),
+	  'type' => MENU_DEFAULT_LOCAL_TASK,
+    );
+	$items['hello-world-menu2/sub-menu2'] = array(
+	  'title' => 'HW Menu2 Sub2',
+      'page callback' => 'example_stuff',
+	  'page arguments' => array(1, 'menu2/sub-menu2'),
+	  'access arguments' => array('access content'),
+	  'type' => MENU_LOCAL_TASK,
+    );
+	$items['hello-world-menu3'] = array(
+	  'title' => 'HW Menu Menu3',
+      'page callback' => 'example_stuff',
+	  'page arguments' => array(1, 'Good-bye'),
+	  'access arguments' => array('access content'),
+	  'type' => MENU_NORMAL_ITEM,  //   MENU_DEFAULT_LOCAL_TASK
+    );
+    return $items;
+  }
+
+  function example_stuff($arg) {
+    return "My page " . $arg;
+  }
+  

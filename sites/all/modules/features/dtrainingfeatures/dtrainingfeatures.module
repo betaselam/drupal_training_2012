@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DTrainingFeatures feature.
+ */
+
+include_once 'dtrainingfeatures.features.inc';

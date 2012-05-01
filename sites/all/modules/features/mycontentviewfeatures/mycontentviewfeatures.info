@@ -1,0 +1,15 @@
+name = MyContentViewFeatures
+core = 7.x
+package = Features
+php = 5.2.4
+version = 7.x-1.2
+project = mycontentviewfeatures
+dependencies[] = ctools
+dependencies[] = date
+dependencies[] = features
+dependencies[] = views
+dependencies[] = views_bulk_operations
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:1
+features[user_role][] = Editor
+features[views_view][] = my_content_view

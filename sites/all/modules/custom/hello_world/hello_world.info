@@ -1,0 +1,6 @@
+name = HelloWold
+description = This is my first module, horray!
+core = 7.x
+package = Features
+php = 5.2.4
+version = 7.x-1.2
